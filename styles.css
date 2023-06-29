@@ -1,3 +1,7 @@
+:root {
+  --container-width: 1200px;
+}
+
 html,
 body {
   margin: 0;
@@ -10,9 +14,57 @@ body {
 header {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+header .header-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-container h1 {
+  font-size: 3em;
+}
+
+.header-container {
+  max-width: var(--container-width);
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.login-btn {
+  background-color: #f0f0f0;
+  padding: 15px 20px;
+  font-size: 1.6em;
+}
+.login-btn:hover {
+  background-color: lightgrey;
+}
+
+main {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.add-book-btn {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 10px 15px;
+  background-color: transparent;
+  transition: 300ms;
+}
+.add-book-btn:hover {
+  background-color: lightgrey;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 footer {
