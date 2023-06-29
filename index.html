@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>HTML 5 Boilerplate</title>
+    <title>My Book Library</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -16,9 +16,68 @@
     </header>
 
     <main>
-      <button class="add-book-btn">+ New Book</button>
+      <div class="add-book-grid">
+        <div class="add-book-container">
+          <label for="name">Book</label>
+          <input type="text" class="full-width" id="name" />
+        </div>
+        <div class="add-book-container">
+          <label for="name">Author</label>
+          <input type="text" class="full-width" id="name" />
+        </div>
+        <div class="add-book-container">
+          <label for="name">Pages</label>
+          <input type="number" class="full-width" id="name" />
+        </div>
+        <button class="add-book-btn">+ New Book</button>
+      </div>
 
-      <div class="books"></div>
+      <div class="books-grid">
+        <div class="book-card">
+          <p>"test book"</p>
+          <p>some author</p>
+          <p>420 pages</p>
+          <button class="read-btn btn-green">Read</button>
+          <button class="btn">Remove</button>
+          <!-- <div class="button-group"></div> -->
+        </div>
+        <div class="book-card">
+          <p>"test bookssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"</p>
+          <p>some author</p>
+          <p>420 pages</p>
+          <div class="button-group">
+            <button class="btn btn-light-green">Read</button>
+            <button class="btn">Remove</button>
+          </div>
+        </div>
+        <div class="book-card">
+          <p>"test book"</p>
+          <p>some author</p>
+          <p>420 pages</p>
+          <div class="button-group">
+            <button class="btn btn-light-green">Read</button>
+            <button class="btn">Remove</button>
+          </div>
+        </div>
+        <div class="book-card">
+          <p>"test book"</p>
+          <p>some author</p>
+          <p>420 pages</p>
+          <div class="button-group">
+            <button class="btn btn-light-green">Read</button>
+            <button class="btn">Remove</button>
+          </div>
+        </div>
+        <div class="book-card">
+          <p>"test book"</p>
+          <p>some author</p>
+          <p>420 pages</p>
+          <div class="button-group">
+            <button class="btn btn-light-green">Read</button>
+            <button class="btn">Remove</button>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
