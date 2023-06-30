@@ -33,7 +33,7 @@ const bookGrid = document.getElementById("booksGrid").addEventListener("click", 
     if (confirm(`are you sure you want to delete ${currentBook[0].innerText}`)) {
       library = library.filter((book) => {
         return (
-          book.name !== currentBook[0].innerText && book.author !== currentBook[1].innerText && book.pages !== +currentBook[2].innerText.replace(" pages", "")
+          book.name !== currentBook[0].innerText && book.author !== currentBook[1].innerText && +book.pages !== +currentBook[2].innerText.replace(" pages", "")
         );
       });
 
@@ -46,7 +46,7 @@ const bookGrid = document.getElementById("booksGrid").addEventListener("click", 
       if (
         book.name === currentBook[0].innerText &&
         book.author === currentBook[1].innerText &&
-        book.pages === +currentBook[2].innerText.replace(" pages", "")
+        +book.pages === +currentBook[2].innerText.replace(" pages", "")
       ) {
         book.isRead = book.isRead === "read" ? "not read" : "read";
         UpdateBooksGrid();
