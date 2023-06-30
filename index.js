@@ -7,7 +7,6 @@ class Book {
   }
 }
 
-// const library = new Library();
 let library = [];
 
 const nameEl = document.getElementById("name");
@@ -16,8 +15,7 @@ const pagesEl = document.getElementById("pages");
 const isReadEl = document.getElementById("isRead");
 const booksGrid = document.getElementById("booksGrid");
 
-// Clear Form;
-const $form = document.querySelector("form").addEventListener("submit", (e) => {
+const formEl = document.querySelector("form").addEventListener("submit", (e) => {
   e.preventDefault();
   AddBookToLibrary();
 
@@ -44,25 +42,14 @@ const bookGrid = document.getElementById("booksGrid").addEventListener("click", 
   }
 
   if (e.target.classList.contains("read-btn")) {
-    const readBtn = currentBook[3];
-
     for (let book of library) {
       if (
         book.name === currentBook[0].innerText &&
         book.author === currentBook[1].innerText &&
         book.pages === +currentBook[2].innerText.replace(" pages", "")
       ) {
-        if (book.isRead === "read") {
-          readBtn.textContent = "Not read";
-          readBtn.classList.remove("btn-green");
-          readBtn.classList.add("btn-red");
-          book.isRead = "not read";
-        } else {
-          readBtn.textContent = "Read";
-          readBtn.classList.remove("btn-red");
-          readBtn.classList.add("btn-green");
-          book.isRead = "read";
-        }
+        book.isRead = book.isRead === "read" ? "not read" : "read";
+        UpdateBooksGrid();
 
         return;
       }
