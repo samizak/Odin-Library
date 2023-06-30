@@ -16,79 +16,36 @@
     </header>
 
     <main>
-      <div class="add-book-grid">
+      <form class="add-book-form">
         <div class="add-book-container">
           <label for="name">Book</label>
           <input type="text" class="full-width" id="name" />
         </div>
         <div class="add-book-container">
-          <label for="name">Author</label>
-          <input type="text" class="full-width" id="name" />
+          <label for="author">Author</label>
+          <input type="text" class="full-width" id="author" />
         </div>
         <div class="add-book-container">
-          <label for="name">Pages</label>
-          <input type="number" class="full-width" id="name" />
+          <label for="pages">Pages</label>
+          <input type="number" class="full-width" id="pages" />
+        </div>
+        <div class="add-book-container">
+          <label for="isRead">Read?</label>
+          <select name="isRead" id="isRead" class="u-full-width">
+            <option value="read">Read</option>
+            <option value="not read">Not read</option>
+          </select>
         </div>
         <button class="add-book-btn">+ New Book</button>
-      </div>
+      </form>
 
-      <div class="books-grid">
+      <div id="booksGrid" class="books-grid">
         <div class="book-card">
           <p>"test book"</p>
           <p>some author</p>
           <p>420 pages</p>
           <button class="read-btn btn-green">Read</button>
           <button class="btn">Remove</button>
-          <!-- <div class="button-group"></div> -->
-        </div>
-
-        <div class="book-card">
-          <p>"test book"</p>
-          <p>some author</p>
-          <p>420 pages</p>
-          <button class="read-btn btn-green">Read</button>
-          <button class="btn">Remove</button>
-          <!-- <div class="button-group"></div> -->
-        </div>
-        <div class="book-card">
-          <p>"test book"</p>
-          <p>some author</p>
-          <p>420 pages</p>
-          <button class="read-btn btn-green">Read</button>
-          <button class="btn">Remove</button>
-          <!-- <div class="button-group"></div> -->
-        </div>
-        <div class="book-card">
-          <p>"test book"</p>
-          <p>some author</p>
-          <p>420 pages</p>
-          <button class="read-btn btn-green">Read</button>
-          <button class="btn">Remove</button>
-          <!-- <div class="button-group"></div> -->
-        </div>
-        <div class="book-card">
-          <p>"test book"</p>
-          <p>some author</p>
-          <p>420 pages</p>
-          <button class="read-btn btn-green">Read</button>
-          <button class="btn">Remove</button>
-          <!-- <div class="button-group"></div> -->
-        </div>
-        <div class="book-card">
-          <p>"test book"</p>
-          <p>some author</p>
-          <p>420 pages</p>
-          <button class="read-btn btn-green">Read</button>
-          <button class="btn">Remove</button>
-          <!-- <div class="button-group"></div> -->
-        </div>
-        <div class="book-card">
-          <p>"test book"</p>
-          <p>some author</p>
-          <p>420 pages</p>
-          <button class="read-btn btn-green">Read</button>
-          <button class="btn">Remove</button>
-          <!-- <div class="button-group"></div> -->
         </div>
       </div>
     </main>
