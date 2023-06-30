@@ -19,7 +19,7 @@ const booksGrid = document.getElementById("booksGrid");
 // Clear Form;
 const $form = document.querySelector("form").addEventListener("submit", (e) => {
   e.preventDefault();
-  addBookToLibrary();
+  AddBookToLibrary();
 
   nameEl.value = "";
   authorEl.value = "";
@@ -34,10 +34,12 @@ const bookGrid = document.getElementById("booksGrid").addEventListener("click", 
   if (e.target.innerHTML == "Remove") {
     if (confirm(`are you sure you want to delete ${currentBook[0].innerText}`)) {
       library = library.filter((book) => {
-        book.name === currentBook[0].innerText && book.author === currentBook[1].innerText && book.pages === currentBook[2].innerText.replace(" pages", "");
+        return (
+          book.name !== currentBook[0].innerText && book.author !== currentBook[1].innerText && book.pages !== +currentBook[2].innerText.replace(" pages", "")
+        );
       });
 
-      currentBookEl.remove();
+      UpdateBooksGrid();
     }
   }
 
@@ -45,7 +47,11 @@ const bookGrid = document.getElementById("booksGrid").addEventListener("click", 
     const readBtn = currentBook[3];
 
     for (let book of library) {
-      if (book.name === currentBook[0].innerText && book.author === currentBook[1].innerText && book.pages === currentBook[2].innerText.replace(" pages", "")) {
+      if (
+        book.name === currentBook[0].innerText &&
+        book.author === currentBook[1].innerText &&
+        book.pages === +currentBook[2].innerText.replace(" pages", "")
+      ) {
         if (book.isRead === "read") {
           readBtn.textContent = "Not read";
           readBtn.classList.remove("btn-green");
@@ -64,7 +70,7 @@ const bookGrid = document.getElementById("booksGrid").addEventListener("click", 
   }
 });
 
-function addBookToLibrary() {
+function AddBookToLibrary() {
   if (nameEl.value.length === 0 || authorEl.value.length === 0 || pagesEl.value.length === 0) {
     alert("Please, fill all the fields");
     return;
@@ -122,3 +128,11 @@ const CreateBookCard = (book) => {
   bookCard.appendChild(removeBtn);
   booksGrid.appendChild(bookCard);
 };
+
+// Generate Library with random values
+// for (let i = 0; i < 20; i++) {
+//   const _randomBool = !Math.round(Math.random());
+//   const _isRead = _randomBool ? "read" : "not read";
+//   library.push(new Book("bookName" + (i + 1), "someAuthor" + (i + 1), i + 1, _isRead));
+//   UpdateBooksGrid();
+// }
